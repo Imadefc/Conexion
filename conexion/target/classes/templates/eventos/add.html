@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Nuevo evento</title>
+	</head>
+	<body>
+		<h1 th:text="${eventos}"></h1>
+		<form th:action="@{/eventos/save}" method="post" th:object="${evento}">
+			<input type="hidden" id="id" th:field="*{id}">
+			<div>
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" th:field="*{nombre}">
+			</div>
+			<div>
+				<label for="hora">Hora</label>
+				<input type="text" id="hora" th:field="*{hora}">
+			</div>
+			<div>
+				<label for="date">Fecha nacimiento</label>
+				<input type="text" id="date" th:field="*{date}">
+			</div>
+			<div>
+				<label for="precio">Precio</label>
+				<input type="text" id="precio" th:field="*{precio}">
+			</div>
+			<div>
+				<label for="nplazas">Número de plazas</label>
+				<input type="text" id="nplazas" th:field="*{nplazas}">
+			</div>
+			<div>
+				<label for="descripcion">Descripción</label>
+				<textarea id="descripcion" th:field="*{descripcion}"></textarea>
+			</div>
+			<div>
+			<label for="categorias">Categorias</label>
+			<select id="categoria" th:field="*{categoria}">
+				<option value="">Seleccione</option>
+				<option th:each="categoria : ${listaCategorias}" th:value="${categoria.nombre}" th:text="${categoria}"></option>
+			</select>
+			</div>
+			<div>
+				<input type="submit" value="Enviar">
+			</div>
+		</form>
+	</body>
+</html>

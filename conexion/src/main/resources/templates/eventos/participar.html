@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Evento</title>
+</head>
+<body>
+	<h1 th:text="${persona}"></h1>
+	<form th:action="@{/eventos/participar}" method="post" th:object="${persona}">
+	<input type="hidden" id="id" th:field="*{id}">
+	<div>
+		<label for="nombre">Nombre</label>
+		<input type="text" id="nombre" th:field="*{nombre}">
+	</div>
+	<div>
+		<input type="submit" value="Enviar">
+	</div>
+</body>
+</html>

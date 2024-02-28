@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de categorias</title>
+</head>
+<body>
+	<div th:switch="${categoria.nombre}">
+		<h1 th:case="null">Añadir categoria</h1>
+		<h1 th:case="*">Editar categoria</h1>
+	</div>
+	<form th:action="@{/categorias/save}" method="post" th:object="${categoria}">
+		<input type="hidden" id="nombre" th:field="*{nombre}">
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>

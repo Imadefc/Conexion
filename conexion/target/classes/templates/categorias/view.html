@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de categorias</title>
+</head>
+<body>
+	<h1 th:text="${categoria.nombre}"></h1>
+	<div>
+		<span>Usuarios con esa categoria</span>
+		<ul>
+			<li th:each="user : ${categoria.usuarios}" th:text="${user}"></li>
+		</ul>
+	</div>
+	<div>
+		<span>Eventos con esa categoria</span>
+		<ul>
+			<li th:each="evento : ${categoria.eventos}" th:text="${evento}"></li>
+		</ul>
+	</div>
+</body>
+</html>

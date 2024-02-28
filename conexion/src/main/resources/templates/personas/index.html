@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de personas</title>
+</head>
+<body>
+	<h1>Listado de personas</h1>
+	<a th:href="@{/personas/add}">Crear nueva persona</a>
+	<table>
+		<thead>
+			<tr><td>ID</td><td>Nombre</td><td>Apellidos</td><td></td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="p : ${listaPersonas}">
+				<td th:text="${p.id}"></td>
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.apellidos}"></td>
+				<td><a th:href="@{/personas/view/{id}(id=${p.id})}">Ver</a> <a th:href="@{/personas/edit/{id}(id=${p.id})}">Editar</a> <a th:href="@{/personas/delete/{id}(id=${p.id})}">Borrar</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

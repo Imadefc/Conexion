@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><h1>Categoria: </h1></td><td><h1 th:text="${evento.categoria}"></h1></td>
+		</tr>
+		<tr>
+			<td><center><h2>Nombre: </h2></center></td><td><h2 th:text="${evento.nombre}"></h2></td>
+		</tr>
+	</table>
+	<form th:action="@{/eventos/save}" method="post" th:object="${evento}">
+		<input type="hidden" id="id" th:field="*{id}">
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<div>
+			<label for="hora">Hora</label>
+			<input type="text" id="hora" th:field="*{hora}">
+		</div>
+		<div>
+			<label for="date">Fecha nacimiento</label>
+			<input type="text" id="date" th:field="*{date}">
+		</div>
+		<div>
+			<label for="descripcion">Descripción</label>
+			<textarea id="descripcion" th:field="*{descripcion}"></textarea>
+		</div>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>

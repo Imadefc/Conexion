@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de personas</title>
+</head>
+<body>
+	<div th:switch="${persona.id}">
+		<h1 th:case="null">Registrarse</h1>
+		<h1 th:case="*">Editar perfil</h1>
+	</div>
+	<form th:action="@{/personas/save}" method="post" th:object="${persona}">
+		<input type="hidden" id="id" th:field="*{id}">
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<div>
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}">
+		</div>
+		<div>
+			<label for="email">Correo electronico</label>
+			<input type="text" id="email" th:field="*{email}">
+		</div>
+		<div>
+			<label for="contraseña">Contraseña</label>
+			<input type="text" id="contraseña" th:field="*{contraseña}">
+		</div>
+		<div>
+			<label for="nacimiento">Fecha nacimiento</label>
+			<input type="date" id="nacimiento" th:field="*{nacimiento}">
+		</div>
+		<div>
+			<label for="biografia">Biografia</label>
+			<textarea id="biografia" th:field="*{biografia}"></textarea>
+		</div>
+		<div>
+			<label for="categorias">Categorias</label>
+			<select id="categorias" th:field="*{tipos}" multiple="true">
+				<option value="">Seleccione</option>
+				<option th:each="categoria : ${listaCategorias}" th:value="${categoria.nombre}" th:text="${categoria}"></option>
+			</select>
+		</div>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>

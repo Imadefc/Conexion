@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de eventos</title>
+</head>
+<body>
+	<h1>Listado de eventos</h1>
+	<a th:href="@{/eventos/add}">Crear nuevo evento</a>
+	<table>
+		<thead>
+			<tr><td>ID</td><td>Nombre</td><td>Hora</td><td></td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="p : ${listaEventos}">
+				<td th:text="${p.id}"></td>
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.hora}"></td>
+				<td><a th:href="@{/eventos/view/{id}(id=${p.id})}">Ver</a> <a th:href="@{/eventos/edit/{id}(id=${p.id})}">Editar</a> <a th:href="@{/eventos/delete/{id}(id=${p.id})}">Borrar</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

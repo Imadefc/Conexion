@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Evento</title>
+</head>
+<body>
+	<h1 th:text="${evento.nombre}"></h1>
+	<form th:action="@{/eventos/participar}" method="post" th:object="${evento}">
+		<input type="hidden" id="id" th:field="*{id}">
+	<div>
+		<label for="nombre"><b>Nombre:</b></label>
+		<span th:text="${evento.nombre}"></span>
+	</div>
+	<div>
+		<label for="hora"><b>Hora:</b></label>
+		<span th:text="${evento.hora}"></span>
+	</div>
+	<div>
+		<label for="precio"><b>Precio:</b></label>
+		<span th:text="${evento.precio}"></span>
+	</div>
+	<div>
+		<label for="date"><b>Fecha:</b></label>
+		<span th:text="${#dates.format(evento.date, 'dd/MM/yyyy')}"></span>
+	</div>
+	<div>
+		<label for="nplazas"><b>Plazas libres:</b></label>
+		<span th:text="${evento.nplazas}"></span>
+	</div>
+	<div>
+		<label for="descripcion"><b>Descripción:</b></label>
+		<span th:text="${evento.descripcion}"></span>
+	</div>
+	<div>
+		<span><b>Categoria:</b></span>
+		<span th:text="${evento.categoria}"></span>
+	</div>
+	<div>
+		<input type="submit" value="Participar">
+	</div>
+	</form>
+</body>
+</html>

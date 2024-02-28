@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Perfil</title>
+</head>
+<body>
+	<h1 th:text="${persona}"></h1>
+	<div>
+		<label for="nombre">Nombre</label>
+		<span th:text="${persona.nombre}"></span>
+	</div>
+	<div>
+		<label for="apellidos">Apellidos</label>
+		<span th:text="${persona.apellidos}"></span>
+	</div>
+	<div>
+		<label for="nacimiento">Fecha nacimiento</label>
+		<span th:text="${#dates.format(persona.nacimiento, 'dd-MM-yyyy')}"></span>
+	</div>
+	<div>
+		<label for="biografia">Biografia</label>
+		<span th:text="${persona.biografia}"></span>
+	</div>
+	<div>
+		<span>Categorias</span>
+		<ul>
+			<li th:each="categoria : ${persona.tipos}" th:text="${categoria}"></li>
+		</ul>
+	</div>
+	<div>
+		<td><a th:href="@{/eventos}">Eventos</a></td>
+	</div>
+	<div>
+		<td><a th:href="@{/categorias}">Categorias</a></td>
+	</div>
+	<div>
+		<h3><span>Eventos en los que participa</span></h3>
+		<ul>
+			<li th:each="eventos : ${persona.eventos}" th:text="${eventos}">
+			<label for="nombre">Nombre</label>
+		<span th:text="${evento.nombre}"></span>
+			</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

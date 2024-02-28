@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de categorias</title>
+</head>
+<body>
+	<h1>Listado de categorias</h1>
+	<table>
+		<thead>
+			<tr><td>Nombre</td><td></td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="p : ${listaCategorias}">
+				<td th:text="${p.nombre}"></td>
+				<td><a th:href="@{/categorias/view/{id}(id=${p.nombre})}">Ver</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
