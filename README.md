@@ -1,0 +1,10 @@
+# G2-Conexion
+-Imad El Founti Chaib  (Analista, Coordinador)
+-Rocío Lapeira Naranjo (Tester, Programadora)
+-DESERTOR: Raúl García Jiménez (Coordinador, Aquitecto)
+-DESERTOR: Jesus Gutierrez (Analista, Coordinador) 
+-Alejandro Téllez Montiel (Tester, Arquitecto)
+-Verónica García Almanza (Analista, Arqquitecta)
+-Ananda Martin Satchaphan (Tester, Programador)
+-DESERTOR: Pedro Higueras Pardal (Programador, Analista)
+-Paula Ríos Sánchez (Arquitecta, Programadora)
